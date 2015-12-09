@@ -1,0 +1,13 @@
+<div data-ng-controller="LoginCtrl" >
+		<div class ="box">
+			<span> 
+				Estamos tratando de mejorar la oferta de horarios de la facu. Ayudanos respondiendo la encuesta, solo te tomara 10 minutos. 
+			</span>
+		</div>
+		<div class ="margenes">
+			<input class ="margen" style="padding:5px;width:500px" type = "text" placeholder = "Ingresa tu mail" ng-model = "user.mail" />
+		</div>
+		<div class ="margenes">
+			<button type = "submit" class= "btn btn-warning" style="padding: 5px;width: 500px" ng-click = "autenticar(user.mail)" > Responder </button>
+		</div>
+</div>

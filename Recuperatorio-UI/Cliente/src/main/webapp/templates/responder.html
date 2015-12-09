@@ -1,0 +1,37 @@
+<div class = "container " data-ng-controller="ResponderCtrl">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+	
+	<h3> Intenci&#243n de cursada </h3>
+	<span> Elegir la carrera que estudias </span>
+	<select class = "form-control" ng-options = "carrera as carrera.nombre for carrera in
+	carreras" ng-model = "carreraSeleccionada"></select>
+	<span> A&#241o en el que ingresaste a la facu </span>
+	<input class = "form-control" type = "text" ng-model = "respuesta.anioIngreso" />
+	<span> &#191Cuantos finales aprobaste? </span>
+	<input class = "form-control" type = "text" ng-model = "respuesta.finalesAprobados" />
+	<span> &#191Cuantos finales desaprobaste? </span>
+	<input class = "form-control" type = "text" ng-model = "respuesta.finalesDesaprobados" />
+	<span> &#191Cuantos materias aprobaste la cursada? </span>
+	<input class = "form-control" type = "text" ng-model = "respuesta.cursadasAprobadas" />
+	<p style="margin-top: 10px;margin-bottom: 0px"> &#191A que materias pensas Anotarte el proximo cuatrimestre? </p>
+	<div>
+		<span> Materia </span>
+		<select class = "form-control" ng-options = "materia as materia.descripcion for materia in
+		carreraSeleccionada.materias" ng-model = "materiaSeleccionada" ></select>
+		<span> Turno </span>
+		<select class = "form-control" ng-options = "turno for turno in turnos"
+		ng-model = "turnoSeleccionado"></select>
+		<button style="margin-top: 5px" type = "submit" class = "btn btn-primary btn-block" ng-click = "agregarMateria()" > Agregar </button>
+	</div>
+	<div>
+		<div ng-repeat = "porCursar in respuesta.materias">
+			<h4> {{porCursar.materia.descripcion}} - <small> {{porCursar.turno}} </small></h4>
+		</div>
+	</div>
+	<button type = "submit" class = "btn btn-primary btn-block" ng-click = "contestar()" > Enviar Respuestas </button>
+</div>
+<div class="col-md-4"></div>
+</div>
+
+	
